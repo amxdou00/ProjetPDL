@@ -14,13 +14,18 @@ public class EtudiantDAO extends ConnectionDAO{
 		
 		try {
 			con = DriverManager.getConnection(URL, LOGIN, PASS);
-			ps = con.prepareStatement("INSERT INTO etudiant (filiere, nom, prenom, email, password) VALUES (?, ?, ?, ?, ?)");
+			ps = con.prepareStatement("INSERT INTO etudiant (filiere, nom, prenom, email, password, numero_groupe, quota, malus) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 			ps.setString(1, etudiant.getFiliere());
 			ps.setString(2, etudiant.getNom());
 			ps.setString(3, etudiant.getPrenom());
 			ps.setString(4, etudiant.getEmail());
 			ps.setString(5, etudiant.getHashedPassword());
+			ps.setInt(6, etudiant.getNumeroGroupe());
+			ps.setInt(7, etudiant.getQuota());
+			ps.setInt(8, 0);
 			returnValue = ps.executeUpdate();
+			
+			System.out.println("Etudiant ajoute");
 			
 		} catch (Exception e) {
 				e.printStackTrace();
