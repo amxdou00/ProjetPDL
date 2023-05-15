@@ -57,7 +57,7 @@ public class AffecterCoursEnseignantGUI {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblIdentifiantCours = new JLabel("Identifiant Cours");
-		lblIdentifiantCours.setBounds(116, 242, 178, 15);
+		lblIdentifiantCours.setBounds(116, 140, 178, 15);
 		frame.getContentPane().add(lblIdentifiantCours);
 		
 		JLabel lblIdentifiantEnseignant = new JLabel("Identifiant Enseignant");
@@ -130,11 +130,6 @@ public class AffecterCoursEnseignantGUI {
 		});
 		btnRetout.setBounds(537, 368, 117, 25);
 		frame.getContentPane().add(btnRetout);
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\ndeye\\Downloads\\unnamed.jpg"));
-		lblNewLabel.setBounds(28, 27, 315, 130);
-		frame.getContentPane().add(lblNewLabel);
 		
 		
 	}
