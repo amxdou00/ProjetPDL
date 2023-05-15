@@ -14,7 +14,7 @@ public class CoursDAO extends ConnectionDAO{
 		
 		try {
 			con = DriverManager.getConnection(URL, LOGIN, PASS);
-			ps = con.prepareStatement("INSERT INTO cours (nom_cours, masse_horaire, heures_amphi, heures_td, heures_pt, heures_examen) VALUES (?, ?, ?, ?, ?, ?)");
+			ps = con.prepareStatement("INSERT INTO cours (nom_cours, masse_horaire, heures_amphi, heures_td, heures_tp, heures_examen) VALUES (?, ?, ?, ?, ?, ?)");
 			ps.setString(1, cours.getNom());
 			ps.setInt(2, cours.getMasseHoraire());
 			ps.setInt(3, cours.getHeureCours());
@@ -86,7 +86,7 @@ public class CoursDAO extends ConnectionDAO{
 
 			
 			con = DriverManager.getConnection(URL, LOGIN, PASS);
-			ps = con.prepareStatement("UPDATE cours set nom_cours = ?, masse_horaire = ?, heure_cours = ?, heure_td = ?, heure_tp = ?, heure_examen = ? WHERE id = ?");
+			ps = con.prepareStatement("UPDATE cours set nom_cours = ?, masse_horaire = ?, heures_amphi = ?, heures_td = ?, heures_tp = ?, heures_examen = ? WHERE id = ?");
 			ps.setString(1, cours.getNom());
 			ps.setInt(2, cours.getMasseHoraire());
 			ps.setInt(3, cours.getHeureCours());

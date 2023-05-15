@@ -1,17 +1,18 @@
 package dao;
+
 import java.sql.*;
 import model.*;
 
-public class EtudiantDAO extends ConnectionDAO{
+public class EtudiantDAO extends ConnectionDAO {
 	public EtudiantDAO() {
 		super();
 	}
-	
+
 	public int add(Etudiant etudiant) {
 		Connection con = null;
 		PreparedStatement ps = null;
 		int returnValue = 0;
-		
+
 		try {
 			con = DriverManager.getConnection(URL, LOGIN, PASS);
 			ps = con.prepareStatement("INSERT INTO etudiant (filiere, nom, prenom, email, password, numero_groupe, quota, malus) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
@@ -24,29 +25,28 @@ public class EtudiantDAO extends ConnectionDAO{
 			ps.setInt(7, etudiant.getQuota());
 			ps.setInt(8, 0);
 			returnValue = ps.executeUpdate();
-			//ok
-			System.out.println("Etudiant ajoute");
-			
+
 		} catch (Exception e) {
-				e.printStackTrace();
-			
+			e.printStackTrace();
+
 		} finally {
-		// fermeture du preparedStatement et de la connexion
 			try {
 				if (ps != null)
 					ps.close();
-				
-			} catch (Exception ignore) {}
-		
+
+			} catch (Exception ignore) {
+			}
+
 			try {
-				if (con != null) 
+				if (con != null)
 					con.close();
-		
-			} catch (Exception ignore) {}
+
+			} catch (Exception ignore) {
+			}
 		}
 		return returnValue;
 	}
-	
+
 	public int delete(int id) {
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -78,32 +78,30 @@ public class EtudiantDAO extends ConnectionDAO{
 		}
 		return returnValue;
 	}
-	
+
 	public int update(Etudiant etudiant) {
 		Connection con = null;
 		PreparedStatement ps = null;
 		int returnValue = 0;
 
-		
 		try {
 
-			
 			con = DriverManager.getConnection(URL, LOGIN, PASS);
-			ps = con.prepareStatement("UPDATE etudiant set nom = ?, prenom = ?, numero_groupe = ?, filiere = ?, quota = ? WHERE id = ?");
+			ps = con.prepareStatement("UPDATE etudiant set nom = ?, prenom = ?, numero_groupe = ?, filiere = ?, quota = ?, email = ? WHERE id = ?");
 			ps.setString(1, etudiant.getNom());
 			ps.setString(2, etudiant.getPrenom());
 			ps.setInt(3, etudiant.getNumeroGroupe());
 			ps.setString(4, etudiant.getFiliere());
 			ps.setInt(5, etudiant.getQuota());
-			ps.setInt(6, etudiant.getId());
-			
-			
+			ps.setString(6, etudiant.getEmail());
+			ps.setInt(7, etudiant.getId());
+
 			returnValue = ps.executeUpdate();
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			
+
 			try {
 				if (ps != null) {
 					ps.close();

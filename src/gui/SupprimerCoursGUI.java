@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -63,13 +64,25 @@ public class SupprimerCoursGUI {
 		lblId.setBounds(103, 141, 70, 15);
 		frame.getContentPane().add(lblId);
 		
+		final JLabel label = new JLabel("");
+		label.setBounds(12, 425, 635, 15);
+		frame.getContentPane().add(label);
+		frame.setVisible(true);
+		
 		JButton btnSupprimer = new JButton("Supprimer");
 		btnSupprimer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				// Récupération de l'identifiant du cours
 				int id = Integer.parseInt(textFieldId.getText());
 				
+				// Création d'une instance de coursDAO
 				CoursDAO coursDAO = new CoursDAO();
+				
+				// Suppression du cours
 				coursDAO.delete(id);
+				
+				label.setForeground(Color.green);
+				label.setText("Le cours a bien été supprimé");
 			}
 		});
 		btnSupprimer.setBounds(223, 360, 117, 25);
@@ -85,6 +98,7 @@ public class SupprimerCoursGUI {
 		});
 		btnRetour.setBounds(530, 360, 117, 25);
 		frame.getContentPane().add(btnRetour);
-		frame.setVisible(true);
+		
+		
 	}
 }

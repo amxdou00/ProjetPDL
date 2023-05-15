@@ -101,9 +101,9 @@ public class AjouterEtudiantGUI {
 		lblNewLabel_1_1_1.setBounds(399, 316, 70, 15);
 		panel.add(lblNewLabel_1_1_1);
 		
-		final JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setBounds(288, 424, 209, 15);
-		panel.add(lblNewLabel_2);
+		final JLabel label = new JLabel("");
+		label.setBounds(25, 424, 209, 15);
+		panel.add(label);
 		
 		final JLabel lblGroupe = new JLabel("Groupe");
 		lblGroupe.setBounds(77, 316, 70, 15);
@@ -117,16 +117,23 @@ public class AjouterEtudiantGUI {
 		JButton btnNewButton = new JButton("Ajouter");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				// Récupération des données
 				String nom = textFieldNom.getText();
 				String prenom = textFieldNom.getText();
 				int groupe = Integer.parseInt(textFieldGroupe.getText());
 				String filiere = choice.getItem(choice.getSelectedIndex());
 				int quota = Integer.parseInt(textFieldQuota.getText());
 				
+				// Création d'un étudiant à partir des données récupérées
 				Etudiant etudiant = new Etudiant(nom, prenom, groupe, filiere, quota);
+				
+				// Création d'une instance de EtudiantDAO
 				EtudiantDAO edao = new EtudiantDAO();
 				
+				// Ajout de l'étudiant
 				edao.add(etudiant);
+				
+				label.setText("L'étudiant a bien été ajouté");
 			}
 		});
 		btnNewButton.setForeground(new Color(0, 0, 0));

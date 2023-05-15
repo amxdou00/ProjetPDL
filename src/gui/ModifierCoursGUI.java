@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -114,9 +115,14 @@ public class ModifierCoursGUI {
 		textFieldExamen.setBounds(208, 290, 114, 19);
 		frame.getContentPane().add(textFieldExamen);
 		
+		final JLabel label = new JLabel("");
+		label.setBounds(12, 425, 642, 15);
+		frame.getContentPane().add(label);
+		
 		JButton btnCreer = new JButton("Modifier");
 		btnCreer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				// Récupération des données
 				String nom = textFieldNom.getText();
 				int masseHoraire = Integer.parseInt(textFieldMh.getText());
 				int nbreHeuresCours = Integer.parseInt(textFieldCours.getText());
@@ -125,10 +131,24 @@ public class ModifierCoursGUI {
 				int nbreHeuresExamen = Integer.parseInt(textFieldExamen.getText()); 
 				int id = Integer.parseInt(textFieldId.getText());
 				
+				// Vérification de la somme des nombres d'heures de Cours, TD, TP et Examen
+				if((nbreHeuresCours + nbreHeuresTD + nbreHeuresTP + nbreHeuresExamen) != masseHoraire) {
+					label.setForeground(Color.RED);
+					label.setText("La répartition des heures ne correspond pas à la masse horaire");
+					return;
+				}
+				
+				// Création d'un cours à partir des données récupérées
 				Cours cours = new Cours(id, nom, masseHoraire, nbreHeuresCours, nbreHeuresTD, nbreHeuresTP, nbreHeuresExamen);
+				
+				// Création d'une instance de coursDAO
 				CoursDAO coursDAO = new CoursDAO();
 				
-				coursDAO.add(cours);
+				// Mise à jour du cours
+				coursDAO.update(cours);
+				
+				label.setForeground(Color.GREEN);
+				label.setText("Le cours de " + nom + " a bien été modifié");
 			}
 		});
 		btnCreer.setBounds(257, 376, 117, 25);
@@ -154,6 +174,10 @@ public class ModifierCoursGUI {
 		textFieldId.setColumns(10);
 		textFieldId.setBounds(103, 87, 114, 19);
 		frame.getContentPane().add(textFieldId);
+		
+		
+		
+		
 	}
 
 }
