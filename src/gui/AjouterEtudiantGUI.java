@@ -118,7 +118,7 @@ public class AjouterEtudiantGUI {
 		panel.add(btnNewButton);
 		
 		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\ndeye\\Downloads\\logo_esigelec_boite-1.png"));
+		lblNewLabel_3.setIcon(new ImageIcon("./images/logo_esigelec_boite-1.png"));
 		lblNewLabel_3.setBounds(79, -5, 574, 202);
 		panel.add(lblNewLabel_3);
 		
