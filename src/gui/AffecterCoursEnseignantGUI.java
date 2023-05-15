@@ -15,6 +15,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import javax.swing.JPanel;
+import javax.swing.ImageIcon;
 
 public class AffecterCoursEnseignantGUI {
 
@@ -55,24 +57,24 @@ public class AffecterCoursEnseignantGUI {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblIdentifiantCours = new JLabel("Identifiant Cours");
-		lblIdentifiantCours.setBounds(116, 99, 178, 15);
+		lblIdentifiantCours.setBounds(116, 242, 178, 15);
 		frame.getContentPane().add(lblIdentifiantCours);
 		
 		JLabel lblIdentifiantEnseignant = new JLabel("Identifiant Enseignant");
-		lblIdentifiantEnseignant.setBounds(116, 181, 178, 15);
+		lblIdentifiantEnseignant.setBounds(116, 313, 178, 15);
 		frame.getContentPane().add(lblIdentifiantEnseignant);
 		
 		JLabel lblAffecterCoursA = new JLabel("Affecter Cours A Un Enseignant");
-		lblAffecterCoursA.setBounds(245, 27, 301, 15);
+		lblAffecterCoursA.setBounds(229, 200, 308, 32);
 		frame.getContentPane().add(lblAffecterCoursA);
 		
 		textFieldCours = new JTextField();
-		textFieldCours.setBounds(329, 97, 114, 19);
+		textFieldCours.setBounds(329, 240, 114, 19);
 		frame.getContentPane().add(textFieldCours);
 		textFieldCours.setColumns(10);
 		
 		textFieldEns = new JTextField();
-		textFieldEns.setBounds(329, 179, 114, 19);
+		textFieldEns.setBounds(329, 311, 114, 19);
 		frame.getContentPane().add(textFieldEns);
 		textFieldEns.setColumns(10);
 		
@@ -127,9 +129,13 @@ public class AffecterCoursEnseignantGUI {
 			}
 		});
 		btnRetout.setBounds(537, 368, 117, 25);
-		frame.add(btnRetout);
+		frame.getContentPane().add(btnRetout);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\ndeye\\Downloads\\unnamed.jpg"));
+		lblNewLabel.setBounds(28, 27, 315, 130);
+		frame.getContentPane().add(lblNewLabel);
 		
 		
 	}
-
 }
