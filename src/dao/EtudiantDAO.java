@@ -24,7 +24,7 @@ public class EtudiantDAO extends ConnectionDAO{
 			ps.setInt(7, etudiant.getQuota());
 			ps.setInt(8, 0);
 			returnValue = ps.executeUpdate();
-			
+			//ok
 			System.out.println("Etudiant ajoute");
 			
 		} catch (Exception e) {
