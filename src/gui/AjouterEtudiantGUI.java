@@ -9,6 +9,8 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 import javax.swing.SwingConstants;
 
@@ -24,9 +26,10 @@ import javax.swing.ImageIcon;
 public class AjouterEtudiantGUI {
 
 	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField textFieldNom;
+	private JTextField textFieldPrenom;
+	private JTextField textFieldGroupe;
+	private JTextField textFieldQuota;
 
 	/**
 	 * Launch the application.
@@ -70,15 +73,15 @@ public class AjouterEtudiantGUI {
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 20));
 		panel.add(lblNewLabel);
 		
-		textField = new JTextField();
-		textField.setBounds(77, 260, 175, 30);
-		panel.add(textField);
-		textField.setColumns(10);
+		textFieldNom = new JTextField();
+		textFieldNom.setBounds(77, 260, 175, 30);
+		panel.add(textFieldNom);
+		textFieldNom.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(399, 260, 175, 30);
-		panel.add(textField_1);
+		textFieldPrenom = new JTextField();
+		textFieldPrenom.setColumns(10);
+		textFieldPrenom.setBounds(399, 260, 175, 30);
+		panel.add(textFieldPrenom);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nom");
 		lblNewLabel_1.setBounds(77, 235, 70, 15);
@@ -106,15 +109,29 @@ public class AjouterEtudiantGUI {
 		lblGroupe.setBounds(77, 316, 70, 15);
 		panel.add(lblGroupe);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(77, 341, 175, 19);
-		panel.add(textField_2);
-		textField_2.setColumns(10);
+		textFieldGroupe = new JTextField();
+		textFieldGroupe.setBounds(77, 341, 175, 19);
+		panel.add(textFieldGroupe);
+		textFieldGroupe.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Ajouter");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String nom = textFieldNom.getText();
+				String prenom = textFieldNom.getText();
+				int groupe = Integer.parseInt(textFieldGroupe.getText());
+				String filiere = choice.getItem(choice.getSelectedIndex());
+				int quota = Integer.parseInt(textFieldQuota.getText());
+				
+				Etudiant etudiant = new Etudiant(nom, prenom, groupe, filiere, quota);
+				EtudiantDAO edao = new EtudiantDAO();
+				
+				edao.add(etudiant);
+			}
+		});
 		btnNewButton.setForeground(new Color(0, 0, 0));
 		btnNewButton.setBackground(new Color(255, 0, 0));
-		btnNewButton.setBounds(281, 397, 85, 21);
+		btnNewButton.setBounds(277, 418, 85, 21);
 		panel.add(btnNewButton);
 		
 		JLabel lblNewLabel_3 = new JLabel("");
@@ -132,6 +149,15 @@ public class AjouterEtudiantGUI {
 		});
 		btnRetout.setBounds(537, 368, 117, 25);
 		panel.add(btnRetout);
+		
+		JLabel lblQuota = new JLabel("Quota");
+		lblQuota.setBounds(77, 372, 70, 15);
+		panel.add(lblQuota);
+		
+		textFieldQuota = new JTextField();
+		textFieldQuota.setBounds(77, 399, 114, 19);
+		panel.add(textFieldQuota);
+		textFieldQuota.setColumns(10);
 		
 		
 		

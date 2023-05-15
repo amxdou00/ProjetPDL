@@ -17,8 +17,10 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-
+<<<<<<< HEAD
+	<classpathentry kind="lib" path="C:/Users/ndeye/ProjetPDL/ojdbc7_g.jar"/>
+=======
 	<classpathentry kind="lib" path="/home/kxizen/Desktop/pdl/ojdbc7_g.jar"/>
-
+>>>>>>> 0f9132a5eb25136adeb7332b0a47a79588c3daa3
 	<classpathentry kind="output" path="bin"/>
 </classpath>
