@@ -25,7 +25,7 @@ public class EtudiantGUI {
 	private PanelDepotJustificatif panelDepotJustificatif;
 	private PanelPlanifierAbsence panelPlanifierAbsence;
 	private PanelMessages panelMessages;
-	
+	private PanelAbsencePhysique panelAbsencePhysique;
 	
 
 	public EtudiantGUI(Etudiant etudiant) {
@@ -36,6 +36,7 @@ public class EtudiantGUI {
 		panelDepotJustificatif.setVisible(false);
 		panelPlanifierAbsence.setVisible(false);
 		panelMessages.setVisible(false);
+		panelAbsencePhysique.setVisible(false);
 	}
 
 	/**
@@ -54,6 +55,7 @@ public class EtudiantGUI {
 		panelDepotJustificatif = new PanelDepotJustificatif(etudiant);
 		panelPlanifierAbsence = new PanelPlanifierAbsence(etudiant);
 		panelMessages = new PanelMessages(etudiant);
+		panelAbsencePhysique = new PanelAbsencePhysique(etudiant);
 		
 		JPanel sidePanel = new JPanel();
 		sidePanel.setBackground(Color.RED);
@@ -83,6 +85,7 @@ public class EtudiantGUI {
 				panelDepotJustificatif.setVisible(false);
 				panelPlanifierAbsence.setVisible(false);
 				panelMessages.setVisible(false);
+				panelAbsencePhysique.setVisible(false);
 				
 				panelPlanning.setVisible(true);
 			}
@@ -90,7 +93,7 @@ public class EtudiantGUI {
 		buttonPlanning.setFont(new Font("FreeSans", Font.BOLD, 15));
 		buttonPlanning.setForeground(Color.WHITE);
 		buttonPlanning.setBackground(Color.RED);
-		buttonPlanning.setBounds(0, 120, 189, 50);
+		buttonPlanning.setBounds(0, 100, 189, 50);
 		sidePanel.add(buttonPlanning);
 		
 		final JButton buttonVoirAbsence = new JButton("Voir mes absences");
@@ -111,6 +114,7 @@ public class EtudiantGUI {
 				panelDepotJustificatif.setVisible(false);
 				panelPlanifierAbsence.setVisible(false);
 				panelMessages.setVisible(false);
+				panelAbsencePhysique.setVisible(false);
 				
 				panelVoirAbsence.setVisible(true);
 			}
@@ -120,7 +124,7 @@ public class EtudiantGUI {
 		buttonVoirAbsence.setForeground(Color.WHITE);
 		buttonVoirAbsence.setFont(new Font("FreeSans", Font.BOLD, 15));
 		buttonVoirAbsence.setBackground(Color.RED);
-		buttonVoirAbsence.setBounds(0, 170, 189, 50);
+		buttonVoirAbsence.setBounds(0, 150, 189, 50);
 		sidePanel.add(buttonVoirAbsence);
 		
 		final JButton buttonJustifierAbsence = new JButton("Justifier absence(s)");
@@ -141,6 +145,7 @@ public class EtudiantGUI {
 				panelDepotJustificatif.setVisible(false);
 				panelPlanifierAbsence.setVisible(false);
 				panelMessages.setVisible(false);
+				panelAbsencePhysique.setVisible(false);
 				
 				panelDepotJustificatif.setVisible(true);
 			}
@@ -150,7 +155,7 @@ public class EtudiantGUI {
 		buttonJustifierAbsence.setForeground(Color.WHITE);
 		buttonJustifierAbsence.setFont(new Font("FreeSans", Font.BOLD, 15));
 		buttonJustifierAbsence.setBackground(Color.RED);
-		buttonJustifierAbsence.setBounds(0, 220, 189, 50);
+		buttonJustifierAbsence.setBounds(0, 200, 189, 50);
 		sidePanel.add(buttonJustifierAbsence);
 		
 		final JButton buttonAnticiperAbsence = new JButton("Anticiper absence(s)");
@@ -171,6 +176,7 @@ public class EtudiantGUI {
 				panelDepotJustificatif.setVisible(false);
 				panelPlanifierAbsence.setVisible(false);
 				panelMessages.setVisible(false);
+				panelAbsencePhysique.setVisible(false);
 				
 				panelPlanifierAbsence.setVisible(true);
 			}
@@ -180,7 +186,7 @@ public class EtudiantGUI {
 		buttonAnticiperAbsence.setForeground(Color.WHITE);
 		buttonAnticiperAbsence.setFont(new Font("FreeSans", Font.BOLD, 15));
 		buttonAnticiperAbsence.setBackground(Color.RED);
-		buttonAnticiperAbsence.setBounds(0, 270, 189, 50);
+		buttonAnticiperAbsence.setBounds(0, 250, 189, 50);
 		sidePanel.add(buttonAnticiperAbsence);
 		
 		final JButton btnMesMessages = new JButton("Mes messages");
@@ -201,6 +207,7 @@ public class EtudiantGUI {
 				panelDepotJustificatif.setVisible(false);
 				panelPlanifierAbsence.setVisible(false);
 				panelMessages.setVisible(false);
+				panelAbsencePhysique.setVisible(false);
 				
 				panelMessages.setVisible(true);
 			}
@@ -210,8 +217,39 @@ public class EtudiantGUI {
 		btnMesMessages.setFocusable(false);
 		btnMesMessages.setBorderPainted(false);
 		btnMesMessages.setBackground(Color.RED);
-		btnMesMessages.setBounds(0, 321, 189, 50);
+		btnMesMessages.setBounds(0, 300, 189, 50);
 		sidePanel.add(btnMesMessages);
+		
+		final JButton btnAbsencePhysique = new JButton("Absences Physiques");
+		btnAbsencePhysique.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnAbsencePhysique.setBackground(new Color(0f, 0f, 0f, 0.5f));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnAbsencePhysique.setBackground(Color.red);
+			}
+		});
+		btnAbsencePhysique.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panelPlanning.setVisible(false);
+				panelVoirAbsence.setVisible(false);
+				panelDepotJustificatif.setVisible(false);
+				panelPlanifierAbsence.setVisible(false);
+				panelMessages.setVisible(false);
+				panelAbsencePhysique.setVisible(false);
+				
+				btnAbsencePhysique.setVisible(true);
+			}
+		});
+		btnAbsencePhysique.setForeground(Color.WHITE);
+		btnAbsencePhysique.setFont(new Font("FreeSans", Font.BOLD, 15));
+		btnAbsencePhysique.setFocusable(false);
+		btnAbsencePhysique.setBorderPainted(false);
+		btnAbsencePhysique.setBackground(Color.RED);
+		btnAbsencePhysique.setBounds(0, 350, 189, 50);
+		sidePanel.add(btnAbsencePhysique);
 		
 		final JButton buttonAnticiperAbsence_1_1 = new JButton("Déconnexion");
 		buttonAnticiperAbsence_1_1.addMouseListener(new MouseAdapter() {
@@ -236,7 +274,7 @@ public class EtudiantGUI {
 		buttonAnticiperAbsence_1_1.setFocusable(false);
 		buttonAnticiperAbsence_1_1.setBorderPainted(false);
 		buttonAnticiperAbsence_1_1.setBackground(Color.RED);
-		buttonAnticiperAbsence_1_1.setBounds(0, 368, 189, 50);
+		buttonAnticiperAbsence_1_1.setBounds(0, 400, 189, 50);
 		sidePanel.add(buttonAnticiperAbsence_1_1);
 		
 		JPanel mainPanel = new JPanel();
@@ -247,6 +285,7 @@ public class EtudiantGUI {
 		mainPanel.add(panelDepotJustificatif);
 		mainPanel.add(panelPlanifierAbsence);
 		mainPanel.add(panelMessages);
+		mainPanel.add(panelAbsencePhysique);
 		frame.getContentPane().add(mainPanel);
 		mainPanel.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{panelPlanning, panelVoirAbsence}));
 		
