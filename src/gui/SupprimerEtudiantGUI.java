@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import dao.EtudiantDAO;
+import other.ResultMessage;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -77,9 +78,10 @@ public class SupprimerEtudiantGUI {
 				EtudiantDAO etudiantDAO = new EtudiantDAO();
 				
 				// Suppression de l'étudiant
-				etudiantDAO.delete(id);
+				ResultMessage resultMessage = etudiantDAO.delete(id);
 				
-				label.setText("L'étudiant a bien été supprimé");
+				label.setForeground(resultMessage.getColor());
+				label.setText(resultMessage.getMessage());
 			}
 		});
 		btnSupprimer.setBounds(254, 360, 117, 25);

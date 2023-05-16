@@ -23,11 +23,8 @@ import java.sql.*;
 import java.util.ArrayList;
 
 import javax.swing.JLabel;
-//import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JDesktopPane;
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
 
 public class LoginPage {
 
@@ -130,7 +127,8 @@ public class LoginPage {
 								Etudiant etudiant = new Etudiant(id, nom, prenom, numero_groupe);
 								
 								
-					            EtudiantGUI etudiantGUI = new EtudiantGUI(etudiant);
+					            @SuppressWarnings("unused")
+								EtudiantGUI etudiantGUI = new EtudiantGUI(etudiant);
 					            frame.dispose();
 							}
 							else if(selected_function == "Enseignant") {

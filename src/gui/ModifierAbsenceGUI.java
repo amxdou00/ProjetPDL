@@ -78,6 +78,7 @@ public class ModifierAbsenceGUI {
 				int id_absence = Integer.parseInt(textFieldId.getText());
 				Connection con = null;
 				PreparedStatement ps = null;
+				@SuppressWarnings("unused")
 				int returnValue = 0;
 				String query = "update absence set justifiee = 1 where id = "+id_absence;
 				
@@ -112,6 +113,7 @@ public class ModifierAbsenceGUI {
 				int id_absence = Integer.parseInt(textFieldId.getText());
 				Connection con = null;
 				PreparedStatement ps = null;
+				@SuppressWarnings("unused")
 				int returnValue = 0;
 				String query = "update absence set justifiee = 0 where id = "+id_absence;
 				
@@ -146,6 +148,7 @@ public class ModifierAbsenceGUI {
 				int id_absence = Integer.parseInt(textFieldId.getText());
 				Connection con = null;
 				PreparedStatement ps = null;
+				@SuppressWarnings("unused")
 				int returnValue = 0;
 				String query = "update absence set hors_quota = 0 where id = "+id_absence;
 				
@@ -180,6 +183,7 @@ public class ModifierAbsenceGUI {
 				int id_absence = Integer.parseInt(textFieldId.getText());
 				Connection con = null;
 				PreparedStatement ps = null;
+				@SuppressWarnings("unused")
 				int returnValue = 0;
 				String query = "update absence set hors_quota = 1 where id = "+id_absence;
 				
@@ -214,6 +218,7 @@ public class ModifierAbsenceGUI {
 				int id_absence = Integer.parseInt(textFieldId.getText());
 				Connection con = null;
 				PreparedStatement ps = null;
+				@SuppressWarnings("unused")
 				int returnValue = 0;
 				String query = "update absence set lors_examen = 1 where id = "+id_absence;
 				
@@ -247,6 +252,7 @@ public class ModifierAbsenceGUI {
 				int id_absence = Integer.parseInt(textFieldId.getText());
 				Connection con = null;
 				PreparedStatement ps = null;
+				@SuppressWarnings("unused")
 				int returnValue = 0;
 				String query = "update absence set lors_examen = 0 where id = "+id_absence;
 				

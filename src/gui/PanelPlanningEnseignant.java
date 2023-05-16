@@ -22,8 +22,6 @@ import java.sql.ResultSet;
 import java.awt.event.ActionEvent;
 import model.Cours;
 import model.Enseignant;
-import model.Etudiant;
-
 import javax.swing.JTextArea;
 
 public class PanelPlanningEnseignant extends JLabel {

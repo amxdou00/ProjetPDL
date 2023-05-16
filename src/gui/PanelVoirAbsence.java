@@ -15,13 +15,17 @@ import javax.swing.JTextArea;
 
 import dao.ConnectionDAO;
 import model.Absence;
-import model.Cours;
 import model.Etudiant;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class PanelVoirAbsence extends JPanel {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Create the panel.

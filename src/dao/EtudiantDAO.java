@@ -2,20 +2,25 @@ package dao;
 
 import java.sql.*;
 import model.*;
+import other.MyColor;
+import other.ResultMessage;
 
 public class EtudiantDAO extends ConnectionDAO {
 	public EtudiantDAO() {
 		super();
 	}
 
-	public int add(Etudiant etudiant) {
+	public ResultMessage add(Etudiant etudiant) {
 		Connection con = null;
 		PreparedStatement ps = null;
+		@SuppressWarnings("unused")
 		int returnValue = 0;
-
+		
 		try {
+			
 			con = DriverManager.getConnection(URL, LOGIN, PASS);
 			ps = con.prepareStatement("INSERT INTO etudiant (filiere, nom, prenom, email, password, numero_groupe, quota, malus) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+			
 			ps.setString(1, etudiant.getFiliere());
 			ps.setString(2, etudiant.getNom());
 			ps.setString(3, etudiant.getPrenom());
@@ -44,12 +49,13 @@ public class EtudiantDAO extends ConnectionDAO {
 			} catch (Exception ignore) {
 			}
 		}
-		return returnValue;
+		return new ResultMessage(MyColor.GREEN, "L'étudiant a bien été ajouté");
 	}
 
-	public int delete(int id) {
+	public ResultMessage delete(int id) {
 		Connection con = null;
 		PreparedStatement ps = null;
+		@SuppressWarnings("unused")
 		int returnValue = 0;
 
 		try {
@@ -76,12 +82,13 @@ public class EtudiantDAO extends ConnectionDAO {
 			} catch (Exception ignore) {
 			}
 		}
-		return returnValue;
+		return new ResultMessage(MyColor.GREEN, "L'étudiant a bien été supprimé");
 	}
 
-	public int update(Etudiant etudiant) {
+	public ResultMessage update(Etudiant etudiant) {
 		Connection con = null;
 		PreparedStatement ps = null;
+		@SuppressWarnings("unused")
 		int returnValue = 0;
 
 		try {
@@ -115,6 +122,6 @@ public class EtudiantDAO extends ConnectionDAO {
 			} catch (Exception ignore) {
 			}
 		}
-		return returnValue;
+		return new ResultMessage(MyColor.GREEN, "L'étudiant a bien été mis à jour");
 	}
 }

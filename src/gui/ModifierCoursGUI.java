@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 
 import dao.CoursDAO;
 import model.Cours;
+import other.ResultMessage;
 
 import javax.swing.JButton;
 
@@ -145,10 +146,10 @@ public class ModifierCoursGUI {
 				CoursDAO coursDAO = new CoursDAO();
 				
 				// Mise à jour du cours
-				coursDAO.update(cours);
+				ResultMessage resultMessage = coursDAO.update(cours);
 				
-				label.setForeground(Color.GREEN);
-				label.setText("Le cours de " + nom + " a bien été modifié");
+				label.setForeground(resultMessage.getColor());
+				label.setText(resultMessage.getMessage());
 			}
 		});
 		btnCreer.setBounds(257, 376, 117, 25);

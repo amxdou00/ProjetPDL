@@ -11,9 +11,6 @@ public class Etudiant extends MembreEsigelec {
 	private String filiere;
 	private String email;
 	private int quota;
-	private boolean horsQuota;
-	private String[][] planning;
-	private GroupeEtudiant groupe;
 	private int numeroGroupe;
 	
 	public Etudiant(int id, String nom, String prenom, int groupe) {

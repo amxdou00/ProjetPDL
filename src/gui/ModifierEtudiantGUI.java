@@ -9,6 +9,7 @@ import javax.swing.JTextField;
 
 import dao.EtudiantDAO;
 import model.Etudiant;
+import other.ResultMessage;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -126,9 +127,10 @@ public class ModifierEtudiantGUI {
 				EtudiantDAO etudiantDAO = new EtudiantDAO();
 				
 				// Mise à jour des données de l'étudiant
-				etudiantDAO.update(etudiant);
+				ResultMessage resultMessage = etudiantDAO.update(etudiant);
 				
-				label.setText("Les données de l'étudiant ont bien été mises à jour");
+				label.setForeground(resultMessage.getColor());
+				label.setText(resultMessage.getMessage());
 			}
 		});
 		btnValider.setBounds(272, 368, 117, 25);

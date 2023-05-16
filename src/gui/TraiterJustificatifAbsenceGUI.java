@@ -3,7 +3,6 @@ package gui;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.sql.Blob;
@@ -153,6 +152,7 @@ public class TraiterJustificatifAbsenceGUI {
 				int id_absence = Integer.parseInt(textField.getText());
 				Connection con = null;
 				PreparedStatement ps = null;
+				@SuppressWarnings("unused")
 				int returnValue = 0;
 				
 				try {

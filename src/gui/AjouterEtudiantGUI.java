@@ -9,13 +9,11 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-
 import javax.swing.SwingConstants;
 
 import dao.EtudiantDAO;
 import model.Etudiant;
+import other.ResultMessage;
 
 import javax.swing.JTextField;
 import java.awt.Choice;
@@ -128,12 +126,13 @@ public class AjouterEtudiantGUI {
 				Etudiant etudiant = new Etudiant(nom, prenom, groupe, filiere, quota);
 				
 				// Création d'une instance de EtudiantDAO
-				EtudiantDAO edao = new EtudiantDAO();
+				EtudiantDAO etudiantDAO = new EtudiantDAO();
 				
 				// Ajout de l'étudiant
-				edao.add(etudiant);
+				ResultMessage resultMessage = etudiantDAO.add(etudiant);
 				
-				label.setText("L'étudiant a bien été ajouté");
+				label.setForeground(resultMessage.getColor());
+				label.setText(resultMessage.getMessage());
 			}
 		});
 		btnNewButton.setForeground(new Color(0, 0, 0));

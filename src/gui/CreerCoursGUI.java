@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 
 import dao.CoursDAO;
 import model.Cours;
+import other.ResultMessage;
 
 import javax.swing.JButton;
 
@@ -143,10 +144,10 @@ public class CreerCoursGUI {
 				CoursDAO coursDAO = new CoursDAO();
 				
 				// Ajout du cours
-				coursDAO.add(cours);
+				ResultMessage resultMessage = coursDAO.add(cours);
 				
-				label.setForeground(Color.GREEN);
-				label.setText("Le cours de " + nom + " a bien été ajouté");
+				label.setForeground(resultMessage.getColor());
+				label.setText(resultMessage.getMessage());
 			}
 		});
 		btnCreer.setBounds(257, 376, 117, 25);

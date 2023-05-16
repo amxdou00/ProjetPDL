@@ -17,6 +17,7 @@ import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 
 public class PanelFaireAppel extends JPanel {
+	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private JTextField textField_1;
 
@@ -57,6 +58,7 @@ public class PanelFaireAppel extends JPanel {
 				
 				Connection con = null;
 				PreparedStatement ps = null;
+				@SuppressWarnings("unused")
 				int returnValue = 0;
 				
 				try {

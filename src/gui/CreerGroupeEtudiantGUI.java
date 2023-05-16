@@ -9,6 +9,7 @@ import javax.swing.JTextField;
 
 import dao.GroupeEtudiantDAO;
 import model.GroupeEtudiant;
+import other.ResultMessage;
 
 import javax.swing.JButton;
 
@@ -72,16 +73,28 @@ public class CreerGroupeEtudiantGUI {
 		frame.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
+		final JLabel label = new JLabel("");
+		label.setBounds(23, 425, 631, 15);
+		frame.getContentPane().add(label);
+		
 		JButton btnCreer = new JButton("Creer");
 		btnCreer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				// Récupération des données
 				int num_groupe = Integer.parseInt(textField.getText());
 				int capacite_max = Integer.parseInt(textField_1.getText());
 				
+				// Création d'un groupe d'étudiant à partir des données
 				GroupeEtudiant g = new GroupeEtudiant(num_groupe, capacite_max);
+				
+				// Création d'une instance de GroupeEtudiantDAO
 				GroupeEtudiantDAO gdao = new GroupeEtudiantDAO();
 				
-				gdao.add(g);
+				// Ajout du groupe
+				ResultMessage resultMessage = gdao.add(g);
+				
+				label.setForeground(resultMessage.getColor());
+				label.setText(resultMessage.getMessage());
 			}
 		});
 		btnCreer.setBounds(212, 339, 117, 25);
@@ -98,6 +111,7 @@ public class CreerGroupeEtudiantGUI {
 		});
 		btnRetout.setBounds(537, 368, 117, 25);
 		frame.getContentPane().add(btnRetout);
+		
 	}
 
 }

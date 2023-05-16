@@ -85,9 +85,9 @@ public class AjouterEnseignantGUI {
 		lblNewLabel_1_1.setBounds(45, 171, 70, 15);
 		panel.add(lblNewLabel_1_1);
 		
-		final JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setBounds(288, 424, 209, 15);
-		panel.add(lblNewLabel_2);
+		final JLabel label = new JLabel("");
+		label.setBounds(45, 425, 447, 15);
+		panel.add(label);
 		
 		final JLabel lblNumTel = new JLabel("NumeroTel");
 		lblNumTel.setBounds(45, 250, 114, 15);
@@ -107,14 +107,22 @@ public class AjouterEnseignantGUI {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				// Récupération des données
 				String nom_enseignant = textFieldNom.getText();
 				String prenom_enseignant = textFieldPrenom.getText();
 				String num_tel = textField_2.getText();
 				
+				// Création d'un enseignant à partir des données récupérées
 				Enseignant ens = new Enseignant(prenom_enseignant, nom_enseignant, num_tel);
+				
+				// Création d'une instance de EnseignantDAO
 				EnseignantDAO edao = new EnseignantDAO();
+				
+				// Ajout de l'enseignant
 				edao.add(ens);
-				lblNewLabel_2.setText("L'enseignant a bien été ajouté !");
+				
+				label.setForeground(Color.green);
+				label.setText("L'enseignant a bien été ajouté !");
 			}
 			
 		});

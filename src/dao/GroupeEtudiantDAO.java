@@ -5,15 +5,18 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 import model.GroupeEtudiant;
+import other.MyColor;
+import other.ResultMessage;
 
 public class GroupeEtudiantDAO extends ConnectionDAO{
 	public GroupeEtudiantDAO() {
 		super();
 	}
 	
-	public int add(GroupeEtudiant g) {
+	public ResultMessage add(GroupeEtudiant g) {
 		Connection con = null;
 		PreparedStatement ps = null;
+		@SuppressWarnings("unused")
 		int returnValue = 0;
 		
 		try {
@@ -39,6 +42,6 @@ public class GroupeEtudiantDAO extends ConnectionDAO{
 		
 			} catch (Exception ignore) {}
 		}
-		return returnValue;
+		return new ResultMessage(MyColor.GREEN, "Le groupe a bien été ajouté");
 	}
 }

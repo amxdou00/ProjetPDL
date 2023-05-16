@@ -77,6 +77,7 @@ public class DeclencherRattrapageGUI {
 				Connection con = null;
 				PreparedStatement ps = null;
 				ResultSet rs = null;
+				@SuppressWarnings("unused")
 				int returnValue = 0;
 				String query = "select a.id from etudiant a, absence b where b.id_etudiant = a.id and b.justifiee = 1 and b.lors_examen = 1";
 				ArrayList<Integer> liste_id_etudiants = new ArrayList<Integer>();
