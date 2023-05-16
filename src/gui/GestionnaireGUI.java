@@ -222,6 +222,17 @@ public class GestionnaireGUI {
 		});
 		btnDconnexion.setBounds(591, 424, 117, 25);
 		frame.getContentPane().add(btnDconnexion);
+		
+		JButton btnAbsencePhysique = new JButton("Absence Physique");
+		btnAbsencePhysique.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				@SuppressWarnings("unused")
+				AbsencePhysiqueGUI absencePhysiqueGUI = new AbsencePhysiqueGUI();
+				frame.dispose();
+			}
+		});
+		btnAbsencePhysique.setBounds(250, 262, 177, 25);
+		frame.getContentPane().add(btnAbsencePhysique);
 		frame.setVisible(true);
 		
 		
