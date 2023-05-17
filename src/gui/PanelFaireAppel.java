@@ -32,8 +32,8 @@ public class PanelFaireAppel extends JPanel {
 		lblNewLabel.setBounds(33, 29, 201, 15);
 		add(lblNewLabel);
 		
-		JLabel lblIdentifiantCours = new JLabel("Identifiant Cours");
-		lblIdentifiantCours.setBounds(33, 72, 119, 15);
+		JLabel lblIdentifiantCours = new JLabel("Identifiant Planning");
+		lblIdentifiantCours.setBounds(33, 72, 140, 15);
 		add(lblIdentifiantCours);
 		
 		textField = new JTextField();
@@ -62,9 +62,11 @@ public class PanelFaireAppel extends JPanel {
 				int returnValue = 0;
 				
 				try {
-			        String query = "insert into absence (id_etudiant, id_planning, justifiee) values ("+id_etudiant+", "+id_cours+", 0)";
+			        String query = "insert into absence (id_etudiant, id_planning, justifiee) values (?, ?, 0)";
 			        con = DriverManager.getConnection(ConnectionDAO.URL, ConnectionDAO.LOGIN, ConnectionDAO.PASS);
 			        ps = con.prepareStatement(query);
+			        ps.setInt(1, id_etudiant);
+			        ps.setInt(2, id_cours);
 			        returnValue = ps.executeUpdate();
 
 
@@ -90,6 +92,30 @@ public class PanelFaireAppel extends JPanel {
 		});
 		btnMarquerAbsent.setBounds(130, 221, 148, 25);
 		add(btnMarquerAbsent);
+		
+		JButton btnVoirPlanning = new JButton("Voir planning");
+		btnVoirPlanning.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EnseignantGUI.panelPlanningEnseignant.setVisible(false);
+				EnseignantGUI.panelFaireAppel.setVisible(false);
+				EnseignantGUI.panelSyntheseAbsence.setVisible(false);
+				
+				EnseignantGUI.panelPlanningEnseignant.setVisible(true);
+			}
+		});
+		btnVoirPlanning.setBounds(130, 281, 148, 25);
+		add(btnVoirPlanning);
+		
+		JButton btnVoirListeEtudiant = new JButton("Voir Liste Etudiant");
+		btnVoirListeEtudiant.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				@SuppressWarnings("unused")
+				ListeEtudiantsGUI listeEtudiantsGUI = new ListeEtudiantsGUI();
+				EnseignantGUI.frame.dispose();
+			}
+		});
+		btnVoirListeEtudiant.setBounds(130, 345, 148, 25);
+		add(btnVoirListeEtudiant);
 
 	}
 }

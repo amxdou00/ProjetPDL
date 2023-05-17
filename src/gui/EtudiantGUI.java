@@ -20,12 +20,12 @@ public class EtudiantGUI {
 
 	private JFrame frame;
 
-	private PanelPlanning panelPlanning;
-	private PanelVoirAbsence panelVoirAbsence;
-	private PanelDepotJustificatif panelDepotJustificatif;
-	private PanelPlanifierAbsence panelPlanifierAbsence;
-	private PanelMessages panelMessages;
-	private PanelAbsencePhysique panelAbsencePhysique;
+	public static PanelPlanning panelPlanning;
+	public static PanelVoirAbsence panelVoirAbsence;
+	public static PanelDepotJustificatif panelDepotJustificatif;
+	public static PanelPlanifierAbsence panelPlanifierAbsence;
+	public static PanelMessages panelMessages;
+	public static PanelAbsencePhysique panelAbsencePhysique;
 	
 
 	public EtudiantGUI(Etudiant etudiant) {
@@ -240,7 +240,7 @@ public class EtudiantGUI {
 				panelMessages.setVisible(false);
 				panelAbsencePhysique.setVisible(false);
 				
-				btnAbsencePhysique.setVisible(true);
+				panelAbsencePhysique.setVisible(true);
 			}
 		});
 		btnAbsencePhysique.setForeground(Color.WHITE);

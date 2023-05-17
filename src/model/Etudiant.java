@@ -13,6 +13,12 @@ public class Etudiant extends MembreEsigelec {
 	private int quota;
 	private int numeroGroupe;
 	
+	// Constructeur utilisé pour la liste d'appel
+	public Etudiant(String nom, String prenom) {
+		super(nom, prenom);
+	}
+	
+	// Constructeur utilisé pour la connexion
 	public Etudiant(int id, String nom, String prenom, int groupe) {
 		super(nom, prenom);
 		this.numeroGroupe = groupe;
@@ -102,6 +108,11 @@ public class Etudiant extends MembreEsigelec {
 		return this.id;
 	}
 	
+	public String display() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(nom.toUpperCase()).append(" ").append(prenom).append("\n");
+        return sb.toString();
+    }
 	
 }
 

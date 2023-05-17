@@ -101,7 +101,7 @@ public class Cours {
     
     public String display() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Indentifiant Cours: ").append(id).append("\n");
+        sb.append("Indentifiant Planning: ").append(id).append("\n");
         sb.append(typeCours).append(": ").append(nom).append("\n");
         sb.append(heureDebut).append(" - ").append(heureFin).append("\n");
         sb.append("Salle: ").append(salle).append("\n");
