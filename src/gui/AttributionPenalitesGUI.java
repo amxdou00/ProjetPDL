@@ -16,6 +16,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import java.awt.Color;
 
 public class AttributionPenalitesGUI {
 
@@ -54,18 +57,23 @@ public class AttributionPenalitesGUI {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblAttributionPnalits = new JLabel("Attribution Pénalités");
-		lblAttributionPnalits.setBounds(247, 23, 257, 15);
+		lblAttributionPnalits.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblAttributionPnalits.setBounds(254, 0, 257, 34);
 		frame.getContentPane().add(lblAttributionPnalits);
 		
 		JLabel lblNewLabel = new JLabel("20h - 40h -> -0.1 et 40h-60h -> -0.2");
-		lblNewLabel.setBounds(12, 143, 298, 15);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel.setBounds(213, 85, 298, 15);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblLestudiantsSe = new JLabel("Les étudiants se verront attribuer une pénalité en fonction de leurs d'absences non justifiées");
-		lblLestudiantsSe.setBounds(12, 93, 696, 15);
+		lblLestudiantsSe.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblLestudiantsSe.setBounds(83, 60, 696, 15);
 		frame.getContentPane().add(lblLestudiantsSe);
 		
 		JButton btnAttribuerPnalits = new JButton("Attribuer Pénalités");
+		btnAttribuerPnalits.setBackground(new Color(255, 0, 0));
+		btnAttribuerPnalits.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnAttribuerPnalits.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Connection con = null;
@@ -183,11 +191,13 @@ public class AttributionPenalitesGUI {
 
 			}
 		});
-		btnAttribuerPnalits.setBounds(247, 248, 169, 25);
+		btnAttribuerPnalits.setBounds(440, 110, 169, 25);
 		frame.getContentPane().add(btnAttribuerPnalits);
 		frame.setVisible(true);
 		
 		JButton btnRetout = new JButton("Retour");
+		btnRetout.setBackground(new Color(255, 0, 0));
+		btnRetout.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnRetout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				@SuppressWarnings("unused")
@@ -195,8 +205,13 @@ public class AttributionPenalitesGUI {
 				frame.dispose();
 			}
 		});
-		btnRetout.setBounds(537, 368, 117, 25);
-		frame.add(btnRetout);
+		btnRetout.setBounds(253, 397, 117, 25);
+		frame.getContentPane().add(btnRetout);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\ndeye\\Downloads\\image penalité.png"));
+		lblNewLabel_1.setBounds(302, 145, 372, 554);
+		frame.getContentPane().add(lblNewLabel_1);
 	}
 
 }
