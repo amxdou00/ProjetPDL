@@ -14,6 +14,8 @@ import model.Cours;
 import other.ResultMessage;
 
 import javax.swing.JButton;
+import java.awt.Font;
+import javax.swing.ImageIcon;
 
 public class CreerCoursGUI {
 
@@ -58,61 +60,68 @@ public class CreerCoursGUI {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblCreerCours = new JLabel("Creer Cours");
-		lblCreerCours.setBounds(238, 41, 206, 15);
+		lblCreerCours.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblCreerCours.setBounds(266, 51, 206, 15);
 		frame.getContentPane().add(lblCreerCours);
 		
 		JLabel lblNom = new JLabel("Nom");
-		lblNom.setBounds(26, 98, 70, 15);
+		lblNom.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNom.setBounds(163, 108, 70, 15);
 		frame.getContentPane().add(lblNom);
 		
 		JLabel lblMasseHoraire = new JLabel("Masse Horaire");
-		lblMasseHoraire.setBounds(26, 143, 103, 15);
+		lblMasseHoraire.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblMasseHoraire.setBounds(163, 143, 103, 15);
 		frame.getContentPane().add(lblMasseHoraire);
 		
 		JLabel lblNombreHeuresCours = new JLabel("Nombre Heures Cours");
-		lblNombreHeuresCours.setBounds(26, 181, 174, 15);
+		lblNombreHeuresCours.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNombreHeuresCours.setBounds(163, 181, 174, 15);
 		frame.getContentPane().add(lblNombreHeuresCours);
 		
 		JLabel lblNombreHeuresTd = new JLabel("Nombre Heures TD");
-		lblNombreHeuresTd.setBounds(26, 216, 174, 15);
+		lblNombreHeuresTd.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNombreHeuresTd.setBounds(163, 218, 174, 15);
 		frame.getContentPane().add(lblNombreHeuresTd);
 		
 		JLabel lblNombreHeuresTp = new JLabel("Nombre Heures TP");
-		lblNombreHeuresTp.setBounds(26, 255, 174, 15);
+		lblNombreHeuresTp.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNombreHeuresTp.setBounds(163, 255, 174, 15);
 		frame.getContentPane().add(lblNombreHeuresTp);
 		
 		JLabel lblNombreHeuresExamen = new JLabel("Nombre Heures Examen");
-		lblNombreHeuresExamen.setBounds(26, 292, 174, 15);
+		lblNombreHeuresExamen.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNombreHeuresExamen.setBounds(163, 292, 174, 15);
 		frame.getContentPane().add(lblNombreHeuresExamen);
 		
 		textFieldNom = new JTextField();
-		textFieldNom.setBounds(115, 96, 114, 19);
+		textFieldNom.setBounds(367, 106, 169, 19);
 		frame.getContentPane().add(textFieldNom);
 		textFieldNom.setColumns(10);
 		
 		textFieldMh = new JTextField();
 		textFieldMh.setColumns(10);
-		textFieldMh.setBounds(144, 141, 114, 19);
+		textFieldMh.setBounds(367, 141, 169, 19);
 		frame.getContentPane().add(textFieldMh);
 		
 		textFieldCours = new JTextField();
 		textFieldCours.setColumns(10);
-		textFieldCours.setBounds(208, 179, 114, 19);
+		textFieldCours.setBounds(367, 179, 169, 19);
 		frame.getContentPane().add(textFieldCours);
 		
 		textFieldTD = new JTextField();
 		textFieldTD.setColumns(10);
-		textFieldTD.setBounds(169, 214, 114, 19);
+		textFieldTD.setBounds(367, 216, 169, 19);
 		frame.getContentPane().add(textFieldTD);
 		
 		textFieldTP = new JTextField();
 		textFieldTP.setColumns(10);
-		textFieldTP.setBounds(169, 253, 114, 19);
+		textFieldTP.setBounds(367, 253, 169, 19);
 		frame.getContentPane().add(textFieldTP);
 		
 		textFieldExamen = new JTextField();
 		textFieldExamen.setColumns(10);
-		textFieldExamen.setBounds(208, 290, 114, 19);
+		textFieldExamen.setBounds(367, 290, 169, 19);
 		frame.getContentPane().add(textFieldExamen);
 		
 		final JLabel label = new JLabel("");
@@ -120,6 +129,8 @@ public class CreerCoursGUI {
 		frame.getContentPane().add(label);
 		
 		JButton btnCreer = new JButton("Creer");
+		btnCreer.setBackground(new Color(255, 0, 0));
+		btnCreer.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnCreer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Récupération des données
@@ -150,11 +161,13 @@ public class CreerCoursGUI {
 				label.setText(resultMessage.getMessage());
 			}
 		});
-		btnCreer.setBounds(257, 376, 117, 25);
+		btnCreer.setBounds(419, 329, 117, 25);
 		frame.getContentPane().add(btnCreer);
 		frame.setVisible(true);
 		
 		JButton btnRetout = new JButton("Retour");
+		btnRetout.setBackground(new Color(255, 0, 0));
+		btnRetout.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnRetout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				@SuppressWarnings("unused")
@@ -162,8 +175,18 @@ public class CreerCoursGUI {
 				frame.dispose();
 			}
 		});
-		btnRetout.setBounds(537, 368, 117, 25);
+		btnRetout.setBounds(280, 408, 117, 25);
 		frame.getContentPane().add(btnRetout);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\ndeye\\Downloads\\petit logo esig.jpg"));
+		lblNewLabel.setBounds(0, 0, 136, 33);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\ndeye\\Downloads\\planning.png"));
+		lblNewLabel_1.setBounds(482, 0, 224, 141);
+		frame.getContentPane().add(lblNewLabel_1);
 		
 		
 	}
