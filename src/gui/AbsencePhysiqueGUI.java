@@ -18,6 +18,9 @@ import javax.swing.JTextField;
 import dao.ConnectionDAO;
 import other.MyColor;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.Color;
 
 public class AbsencePhysiqueGUI {
 
@@ -57,15 +60,17 @@ public class AbsencePhysiqueGUI {
 		frame.getContentPane().setLayout(null);
 
 		JLabel lblTraitementAbsencePhysique = new JLabel("Traitement Demande Absence Physique");
-		lblTraitementAbsencePhysique.setBounds(163, 30, 374, 15);
+		lblTraitementAbsencePhysique.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblTraitementAbsencePhysique.setBounds(188, 31, 302, 25);
 		frame.getContentPane().add(lblTraitementAbsencePhysique);
 
 		JLabel lblIdentifiantDemande = new JLabel("Identifiant Demande");
-		lblIdentifiantDemande.setBounds(24, 97, 152, 15);
+		lblIdentifiantDemande.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblIdentifiantDemande.setBounds(24, 117, 175, 15);
 		frame.getContentPane().add(lblIdentifiantDemande);
 
 		textFieldId = new JTextField();
-		textFieldId.setBounds(198, 95, 114, 19);
+		textFieldId.setBounds(262, 116, 178, 19);
 		frame.getContentPane().add(textFieldId);
 		textFieldId.setColumns(10);
 
@@ -74,6 +79,9 @@ public class AbsencePhysiqueGUI {
 		frame.getContentPane().add(errLabel);
 
 		JButton btnTlchargerJustificatif = new JButton("Télécharger Justificatif");
+		btnTlchargerJustificatif.setBackground(new Color(255, 0, 0));
+		btnTlchargerJustificatif.setForeground(new Color(0, 0, 0));
+		btnTlchargerJustificatif.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnTlchargerJustificatif.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int id_absence = Integer.parseInt(textFieldId.getText());
@@ -135,7 +143,7 @@ public class AbsencePhysiqueGUI {
 				}
 			}
 		});
-		btnTlchargerJustificatif.setBounds(366, 92, 211, 25);
+		btnTlchargerJustificatif.setBounds(262, 184, 178, 25);
 		frame.getContentPane().add(btnTlchargerJustificatif);
 
 		final JLabel label = new JLabel("");
@@ -143,6 +151,8 @@ public class AbsencePhysiqueGUI {
 		frame.getContentPane().add(label);
 
 		JButton btnValiderDemande = new JButton("Valider Demande");
+		btnValiderDemande.setBackground(new Color(255, 0, 0));
+		btnValiderDemande.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnValiderDemande.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int id = Integer.parseInt(textFieldId.getText());
@@ -242,10 +252,12 @@ public class AbsencePhysiqueGUI {
 
 			}
 		});
-		btnValiderDemande.setBounds(121, 321, 178, 25);
+		btnValiderDemande.setBounds(262, 278, 178, 25);
 		frame.getContentPane().add(btnValiderDemande);
 
 		JButton btnInvaliderDemand = new JButton("Invalider Demande");
+		btnInvaliderDemand.setBackground(new Color(255, 0, 0));
+		btnInvaliderDemand.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnInvaliderDemand.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int id = Integer.parseInt(textFieldId.getText());
@@ -343,11 +355,13 @@ public class AbsencePhysiqueGUI {
 				}
 			}
 		});
-		btnInvaliderDemand.setBounds(121, 374, 178, 25);
+		btnInvaliderDemand.setBounds(497, 278, 178, 25);
 		frame.getContentPane().add(btnInvaliderDemand);
 		frame.setVisible(true);
 
 		JButton btnRetout = new JButton("Retour");
+		btnRetout.setBackground(new Color(255, 0, 0));
+		btnRetout.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnRetout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				@SuppressWarnings("unused")
@@ -355,10 +369,12 @@ public class AbsencePhysiqueGUI {
 				frame.dispose();
 			}
 		});
-		btnRetout.setBounds(537, 368, 117, 25);
+		btnRetout.setBounds(293, 372, 117, 25);
 		frame.getContentPane().add(btnRetout);
 
 		JButton btnVoirLesDemandes = new JButton("Voir Les Demandes");
+		btnVoirLesDemandes.setBackground(new Color(255, 0, 0));
+		btnVoirLesDemandes.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnVoirLesDemandes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				@SuppressWarnings("unused")
@@ -366,8 +382,18 @@ public class AbsencePhysiqueGUI {
 				frame.dispose();
 			}
 		});
-		btnVoirLesDemandes.setBounds(121, 274, 178, 25);
+		btnVoirLesDemandes.setBounds(21, 278, 178, 25);
 		frame.getContentPane().add(btnVoirLesDemandes);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\ndeye\\Downloads\\R.jpg"));
+		lblNewLabel.setBounds(566, 0, 164, 116);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\ndeye\\Downloads\\R (1).jpg"));
+		lblNewLabel_1.setBounds(10, 0, 141, 40);
+		frame.getContentPane().add(lblNewLabel_1);
 
 
 
