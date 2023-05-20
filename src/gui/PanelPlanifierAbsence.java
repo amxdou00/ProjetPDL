@@ -1,6 +1,5 @@
 package gui;
 
-import java.awt.Choice;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Frame;
@@ -26,6 +25,7 @@ import model.Etudiant;
 import javax.swing.JTextField;
 
 public class PanelPlanifierAbsence extends JPanel {
+	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private File selectedFile;
 
@@ -84,6 +84,7 @@ public class PanelPlanifierAbsence extends JPanel {
 		
 		JButton btnValider = new JButton("Valider");
 		btnValider.addActionListener(new ActionListener() {
+			@SuppressWarnings("resource")
 			public void actionPerformed(ActionEvent e) {
 				// Taking the user input
     			int identifiantCours = Integer.parseInt(textField.getText());
@@ -93,7 +94,8 @@ public class PanelPlanifierAbsence extends JPanel {
         		Connection con = null;
     			PreparedStatement ps = null;
     			ResultSet rs = null;
-    			int returnValue = 0;
+    			@SuppressWarnings("unused")
+				int returnValue = 0;
     			
     			try {
             		String query = "select * from planning where id = "+identifiantCours+"and id_groupe_etudiant = "+etudiant.getNumeroGroupe();

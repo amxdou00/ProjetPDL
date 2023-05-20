@@ -6,6 +6,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Random;
 
 public abstract class MembreEsigelec {
+	protected int id;
 	protected String nom;
 	protected String prenom;
 	protected String password;
@@ -19,6 +20,7 @@ public abstract class MembreEsigelec {
 	}
 	
 	public MembreEsigelec(int id, String nom, String prenom) {
+		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.password = generatePassword(12);

@@ -5,6 +5,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import dao.EtudiantDAO;
+import other.ResultMessage;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -59,8 +63,28 @@ public class SupprimerEtudiantGUI {
 		lblId.setBounds(103, 141, 70, 15);
 		frame.getContentPane().add(lblId);
 		
+		final JLabel label = new JLabel("");
+		label.setBounds(42, 425, 605, 15);
+		frame.getContentPane().add(label);
+		frame.setVisible(true);
+		
 		JButton btnSupprimer = new JButton("Supprimer");
-		btnSupprimer.setBounds(223, 360, 117, 25);
+		btnSupprimer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// Récupération de l'identifiant de l'étudiant à supprimer
+				int id = Integer.parseInt(textFieldId.getText());		
+				
+				// Création d'une instance de EtudiantDAO
+				EtudiantDAO etudiantDAO = new EtudiantDAO();
+				
+				// Suppression de l'étudiant
+				ResultMessage resultMessage = etudiantDAO.delete(id);
+				
+				label.setForeground(resultMessage.getColor());
+				label.setText(resultMessage.getMessage());
+			}
+		});
+		btnSupprimer.setBounds(254, 360, 117, 25);
 		frame.getContentPane().add(btnSupprimer);
 		
 		JButton btnRetour = new JButton("Retour");
@@ -73,7 +97,7 @@ public class SupprimerEtudiantGUI {
 		});
 		btnRetour.setBounds(530, 360, 117, 25);
 		frame.getContentPane().add(btnRetour);
-		frame.setVisible(true);
+		
+		
 	}
-
 }

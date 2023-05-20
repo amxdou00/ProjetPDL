@@ -20,6 +20,8 @@ import java.awt.event.ActionEvent;
 
 public class PanelMessages extends JPanel {
 
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Create the panel.
 	 */
@@ -45,6 +47,7 @@ public class PanelMessages extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				Connection con = null;
 				PreparedStatement ps = null;
+				@SuppressWarnings("unused")
 				int returnValue = 0;
 				String query = "update etudiant set message = '' where id = ?";
 				

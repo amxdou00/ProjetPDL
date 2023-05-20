@@ -92,6 +92,7 @@ public class AffecterCoursEnseignantGUI {
 				
 				Connection con = null;
 				PreparedStatement ps = null;
+				@SuppressWarnings("unused")
 				int returnValue = 0;
 				String query = "insert into enseignant_cours (id_enseignant, id_cours) values ("+id_enseignant+", "+id_cours+")";
 				

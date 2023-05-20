@@ -8,6 +8,8 @@ import javax.swing.JTextField;
 
 import dao.EnseignantDAO;
 import model.Enseignant;
+import other.ResultMessage;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -91,18 +93,30 @@ public class ModifierEnseignantGUI {
 		frame.getContentPane().add(textField_2);
 		frame.setVisible(true);
 		
+		final JLabel label = new JLabel("");
+		label.setBounds(32, 425, 607, 15);
+		frame.getContentPane().add(label);
+		
 		JButton btnValider = new JButton("Valider");
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				// Récupération des données
 				int id = Integer.parseInt(textFieldId.getText());
 				String nom = textField.getText();
 				String prenom = textField_1.getText();
 				String num= textField_2.getText();
 				
+				// Création d'un enseignant à partir des données récupérées
 				Enseignant enseignant = new Enseignant(id, prenom, nom, num);
+				
+				// Création d'une instance de EnseignantDAO
 				EnseignantDAO enseignantDAO = new EnseignantDAO();
 				
-				enseignantDAO.update(enseignant);
+				// Mise à jour des données de l'enseignant
+				ResultMessage resultMessage = enseignantDAO.update(enseignant);
+				
+				label.setForeground(resultMessage.getColor());
+				label.setText(resultMessage.getMessage());
 			}
 		});
 		btnValider.setBounds(272, 368, 117, 25);
@@ -118,5 +132,7 @@ public class ModifierEnseignantGUI {
 		});
 		btnRetout.setBounds(537, 368, 117, 25);
 		frame.getContentPane().add(btnRetout);
+		
+		
 	}
 }

@@ -38,7 +38,7 @@ public class Absence {
         sb.append(nom_cours).append("\n");
         sb.append(jour).append(" ").append(heure_debut).append(" - ").append(heure_fin).append("\n");
         sb.append("Durée: ").append(String.format("%02d:%02d", duree/60, duree%60)).append("h\n");
-        sb.append("Justifiée: ").append(justifiee).append("\n\n");
+        sb.append("Justifiée: ").append(convert(justifiee)).append("\n\n");
         return sb.toString();
     }
     
@@ -47,5 +47,17 @@ public class Absence {
         sb.append("Nom Cours: ").append(nom_cours).append("\n");
         sb.append("Durée Absence: ").append(duree).append("\n\n");
         return sb.toString();
+    }
+    
+    public String convert(int n) {
+    	if(n == 0) {
+    		return "Non";
+    	}
+    	else if (n == 1) {
+    		return "Oui";
+    	}
+    	else {
+    		return "";
+    	}
     }
 }

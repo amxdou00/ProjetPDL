@@ -9,6 +9,7 @@ import javax.swing.JTextField;
 
 import dao.EtudiantDAO;
 import model.Etudiant;
+import other.ResultMessage;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -104,9 +105,14 @@ public class ModifierEtudiantGUI {
 		choice.addItem("FISE");
 		frame.getContentPane().add(choice);
 		
+		final JLabel label = new JLabel("");
+		label.setBounds(32, 425, 665, 15);
+		frame.getContentPane().add(label);
+		
 		JButton btnValider = new JButton("Valider");
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				// Récupération des données
 				int id = Integer.parseInt(textFieldId.getText());
 				String nom = textField.getText();
 				String prenom = textField_1.getText();
@@ -114,10 +120,17 @@ public class ModifierEtudiantGUI {
 				String filiere = choice.getItem(choice.getSelectedIndex());
 				int quota = Integer.parseInt(textFieldQuota.getText());
 				
+				// Création d'un étudiant à partir des données récupérées
 				Etudiant etudiant = new Etudiant(id, nom, prenom, groupe, filiere, quota);
+				
+				// Création d'une instance de EtudiantDAO
 				EtudiantDAO etudiantDAO = new EtudiantDAO();
 				
-				etudiantDAO.update(etudiant);
+				// Mise à jour des données de l'étudiant
+				ResultMessage resultMessage = etudiantDAO.update(etudiant);
+				
+				label.setForeground(resultMessage.getColor());
+				label.setText(resultMessage.getMessage());
 			}
 		});
 		btnValider.setBounds(272, 368, 117, 25);
@@ -142,5 +155,7 @@ public class ModifierEtudiantGUI {
 		textFieldQuota.setBounds(131, 288, 114, 19);
 		frame.getContentPane().add(textFieldQuota);
 		textFieldQuota.setColumns(10);
+		
+		
 	}
 }

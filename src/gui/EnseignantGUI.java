@@ -15,10 +15,10 @@ import java.awt.event.MouseEvent;
 
 public class EnseignantGUI {
 
-	private JFrame frame;
-	private PanelPlanningEnseignant panelPlanningEnseignant;
-	private PanelFaireAppel panelFaireAppel;
-	private PanelSyntheseAbsence panelSyntheseAbsence;
+	public static JFrame frame;
+	public static PanelPlanningEnseignant panelPlanningEnseignant;
+	public static PanelFaireAppel panelFaireAppel;
+	public static PanelSyntheseAbsence panelSyntheseAbsence;
 	
 	
 	public EnseignantGUI(Enseignant enseignant) {

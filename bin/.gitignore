@@ -1,5 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /gui/
 =======
 /dao/
 >>>>>>> 0f9132a5eb25136adeb7332b0a47a79588c3daa3
+=======
+/gui/
+/model/
+/org/
+/dao/
+/other/
+>>>>>>> b032ea2f8fa1727d85224a2f08f99acdd725c6b4
