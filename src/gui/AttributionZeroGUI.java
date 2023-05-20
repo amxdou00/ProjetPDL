@@ -15,6 +15,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.ImageIcon;
 
 public class AttributionZeroGUI {
 
@@ -53,19 +56,24 @@ public class AttributionZeroGUI {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblAttributionZeros = new JLabel("Attribution Zeros");
-		lblAttributionZeros.setBounds(257, 31, 191, 15);
+		lblAttributionZeros.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblAttributionZeros.setBounds(256, 147, 191, 15);
 		frame.getContentPane().add(lblAttributionZeros);
 		
 		JLabel lblTousLestudiants = new JLabel("Tous les étudiants ayant une absence non justifiée lors d'un examen, y obtiendront la note 0");
-		lblTousLestudiants.setBounds(12, 93, 696, 15);
+		lblTousLestudiants.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblTousLestudiants.setBounds(33, 211, 696, 15);
 		frame.getContentPane().add(lblTousLestudiants);
 		
 		final JLabel label = new JLabel("");
-		label.setBounds(12, 411, 579, 15);
+		label.setFont(new Font("Tahoma", Font.BOLD, 11));
+		label.setBounds(0, 401, 579, 15);
 		frame.getContentPane().add(label);
 		frame.setVisible(true);
 		
 		JButton btnAttribuerZero = new JButton("Attribuer Zeros");
+		btnAttribuerZero.setBackground(new Color(255, 0, 0));
+		btnAttribuerZero.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnAttribuerZero.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Connection con = null;
@@ -124,10 +132,12 @@ public class AttributionZeroGUI {
 				}
 			}
 		});
-		btnAttribuerZero.setBounds(270, 192, 167, 25);
+		btnAttribuerZero.setBounds(244, 276, 167, 25);
 		frame.getContentPane().add(btnAttribuerZero);
 		
 		JButton btnRetout = new JButton("Retour");
+		btnRetout.setBackground(new Color(255, 0, 0));
+		btnRetout.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnRetout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				@SuppressWarnings("unused")
@@ -135,8 +145,18 @@ public class AttributionZeroGUI {
 				frame.dispose();
 			}
 		});
-		btnRetout.setBounds(537, 368, 117, 25);
-		frame.add(btnRetout);
+		btnRetout.setBounds(274, 408, 117, 25);
+		frame.getContentPane().add(btnRetout);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\ndeye\\Downloads\\petit logo esig.jpg"));
+		lblNewLabel.setBounds(0, 0, 136, 40);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\ndeye\\Downloads\\croix-rouge-logo-symbole-3d-images-photos-gratuites-1560x1732.png"));
+		lblNewLabel_1.setBounds(91, -7, 706, 454);
+		frame.getContentPane().add(lblNewLabel_1);
 		
 		
 	}

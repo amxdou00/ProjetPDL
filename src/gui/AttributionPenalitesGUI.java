@@ -191,7 +191,7 @@ public class AttributionPenalitesGUI {
 
 			}
 		});
-		btnAttribuerPnalits.setBounds(440, 110, 169, 25);
+		btnAttribuerPnalits.setBounds(254, 122, 169, 25);
 		frame.getContentPane().add(btnAttribuerPnalits);
 		frame.setVisible(true);
 		
@@ -205,13 +205,18 @@ public class AttributionPenalitesGUI {
 				frame.dispose();
 			}
 		});
-		btnRetout.setBounds(253, 397, 117, 25);
+		btnRetout.setBounds(272, 396, 117, 25);
 		frame.getContentPane().add(btnRetout);
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\ndeye\\Downloads\\image penalité.png"));
-		lblNewLabel_1.setBounds(302, 145, 372, 554);
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\ndeye\\Downloads\\petit logo esig.jpg"));
+		lblNewLabel_1.setBounds(0, 5, 137, 29);
 		frame.getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\ndeye\\Downloads\\image penalité.png"));
+		lblNewLabel_2.setBounds(282, 134, 453, 587);
+		frame.getContentPane().add(lblNewLabel_2);
 	}
 
 }
