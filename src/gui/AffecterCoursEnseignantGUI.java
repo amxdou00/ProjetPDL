@@ -57,7 +57,7 @@ public class AffecterCoursEnseignantGUI {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblIdentifiantCours = new JLabel("Identifiant Cours");
-		lblIdentifiantCours.setBounds(116, 140, 178, 15);
+		lblIdentifiantCours.setBounds(116, 242, 178, 15);
 		frame.getContentPane().add(lblIdentifiantCours);
 		
 		JLabel lblIdentifiantEnseignant = new JLabel("Identifiant Enseignant");
