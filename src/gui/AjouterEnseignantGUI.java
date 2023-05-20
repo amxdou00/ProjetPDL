@@ -17,6 +17,7 @@ import model.Enseignant;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
+import javax.swing.ImageIcon;
 
 public class AjouterEnseignantGUI {
 
@@ -62,27 +63,29 @@ public class AjouterEnseignantGUI {
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Ajout d'un enseignant");
-		lblNewLabel.setBounds(0, 0, 720, 48);
+		lblNewLabel.setBounds(-41, 35, 720, 48);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 20));
 		panel.add(lblNewLabel);
 		
 		textFieldNom = new JTextField();
-		textFieldNom.setBounds(45, 126, 175, 30);
+		textFieldNom.setBounds(290, 117, 175, 30);
 		panel.add(textFieldNom);
 		textFieldNom.setColumns(10);
 		
 		textFieldPrenom = new JTextField();
 		textFieldPrenom.setColumns(10);
-		textFieldPrenom.setBounds(45, 198, 175, 30);
+		textFieldPrenom.setBounds(290, 181, 175, 30);
 		panel.add(textFieldPrenom);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nom");
-		lblNewLabel_1.setBounds(45, 99, 70, 15);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_1.setBounds(83, 124, 70, 15);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Prenom");
-		lblNewLabel_1_1.setBounds(45, 171, 70, 15);
+		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_1_1.setBounds(83, 188, 70, 15);
 		panel.add(lblNewLabel_1_1);
 		
 		final JLabel label = new JLabel("");
@@ -90,18 +93,19 @@ public class AjouterEnseignantGUI {
 		panel.add(label);
 		
 		final JLabel lblNumTel = new JLabel("NumeroTel");
-		lblNumTel.setBounds(45, 250, 114, 15);
+		lblNumTel.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNumTel.setBounds(83, 250, 114, 15);
 		panel.add(lblNumTel);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(45, 279, 114, 19);
+		textField_2.setBounds(290, 248, 175, 19);
 		panel.add(textField_2);
 		textField_2.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Ajouter");
 		btnNewButton.setForeground(Color.WHITE);
 		btnNewButton.setBackground(new Color(255, 0, 0));
-		btnNewButton.setBounds(308, 387, 117, 25);
+		btnNewButton.setBounds(348, 315, 117, 25);
 		
 		btnNewButton.addActionListener(new ActionListener() {
 
@@ -130,6 +134,8 @@ public class AjouterEnseignantGUI {
 		panel.add(btnNewButton);
 		
 		JButton btnRetout = new JButton("Retour");
+		btnRetout.setBackground(new Color(255, 0, 0));
+		btnRetout.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnRetout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				@SuppressWarnings("unused")
@@ -137,8 +143,18 @@ public class AjouterEnseignantGUI {
 				frame.dispose();
 			}
 		});
-		btnRetout.setBounds(591, 387, 117, 25);
+		btnRetout.setBounds(290, 390, 117, 25);
 		panel.add(btnRetout);
+		
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\ndeye\\Downloads\\petit logo esig.jpg"));
+		lblNewLabel_2.setBounds(0, 0, 137, 30);
+		panel.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("New label");
+		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\ndeye\\Downloads\\add-user-icon-256.png"));
+		lblNewLabel_3.setBounds(485, 0, 221, 172);
+		panel.add(lblNewLabel_3);
 		
 		
 		
