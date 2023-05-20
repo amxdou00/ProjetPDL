@@ -17,6 +17,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.ImageIcon;
+import java.awt.Font;
 
 public class AffecterCoursEnseignantGUI {
 
@@ -57,24 +58,27 @@ public class AffecterCoursEnseignantGUI {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblIdentifiantCours = new JLabel("Identifiant Cours");
-		lblIdentifiantCours.setBounds(116, 242, 178, 15);
+		lblIdentifiantCours.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblIdentifiantCours.setBounds(160, 188, 178, 15);
 		frame.getContentPane().add(lblIdentifiantCours);
 		
 		JLabel lblIdentifiantEnseignant = new JLabel("Identifiant Enseignant");
-		lblIdentifiantEnseignant.setBounds(116, 313, 178, 15);
+		lblIdentifiantEnseignant.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblIdentifiantEnseignant.setBounds(160, 104, 178, 15);
 		frame.getContentPane().add(lblIdentifiantEnseignant);
 		
 		JLabel lblAffecterCoursA = new JLabel("Affecter Cours A Un Enseignant");
-		lblAffecterCoursA.setBounds(229, 200, 308, 32);
+		lblAffecterCoursA.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblAffecterCoursA.setBounds(248, 10, 308, 32);
 		frame.getContentPane().add(lblAffecterCoursA);
 		
 		textFieldCours = new JTextField();
-		textFieldCours.setBounds(329, 240, 114, 19);
+		textFieldCours.setBounds(394, 102, 178, 19);
 		frame.getContentPane().add(textFieldCours);
 		textFieldCours.setColumns(10);
 		
 		textFieldEns = new JTextField();
-		textFieldEns.setBounds(329, 311, 114, 19);
+		textFieldEns.setBounds(394, 186, 178, 19);
 		frame.getContentPane().add(textFieldEns);
 		textFieldEns.setColumns(10);
 		
@@ -85,6 +89,8 @@ public class AffecterCoursEnseignantGUI {
 		frame.setVisible(true);
 		
 		JButton btnAffecter = new JButton("Affecter");
+		btnAffecter.setBackground(new Color(255, 0, 0));
+		btnAffecter.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnAffecter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int id_enseignant = Integer.parseInt(textFieldEns.getText());
@@ -118,10 +124,12 @@ public class AffecterCoursEnseignantGUI {
 		
 			}
 		});
-		btnAffecter.setBounds(259, 338, 117, 25);
+		btnAffecter.setBounds(427, 252, 117, 25);
 		frame.getContentPane().add(btnAffecter);
 		
 		JButton btnRetout = new JButton("Retour");
+		btnRetout.setBackground(new Color(255, 0, 0));
+		btnRetout.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnRetout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				@SuppressWarnings("unused")
@@ -129,8 +137,18 @@ public class AffecterCoursEnseignantGUI {
 				frame.dispose();
 			}
 		});
-		btnRetout.setBounds(537, 368, 117, 25);
+		btnRetout.setBounds(286, 352, 117, 25);
 		frame.getContentPane().add(btnRetout);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\ndeye\\Downloads\\petit logo esig.jpg"));
+		lblNewLabel.setBounds(0, 0, 136, 32);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\ndeye\\Downloads\\staff-annual-leave-planner-software-1024x677.jpg"));
+		lblNewLabel_1.setBounds(0, 0, 706, 443);
+		frame.getContentPane().add(lblNewLabel_1);
 		
 		
 	}
